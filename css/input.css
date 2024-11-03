@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.game{
+    @apply flex flex-col justify-center items-center gap-5 h-[100vh] bg-slate-200 m-0;
+}
+
+.heading{
+    @apply text-5xl font-mono font-semibold text-indigo-800
+}
+.game-board{
+    @apply grid grid-cols-5 gap-10 bg-slate-400 rounded-2xl p-10;
+}
+
+.memory-card{
+    @apply w-[50px] h-[50px] md:w-[100px] md:h-[100px] relative scale-100 cursor-pointer active:scale-95;
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
+}
+
+.memory-card img{
+    @apply w-[100%] h-[100%] absolute rounded-xl;
+    backface-visibility: hidden;
+}
+
+.front-face{
+    @apply transform;
+    transform: rotateY(180deg);
+}
+
+.memory-card.flip {
+    @apply transform;
+    transform: rotateY(180deg);
+}
+
+#resetBtn{
+    @apply px-5 py-2 font-mono bg-slate-500 rounded-xl text-white font-bold
+}
